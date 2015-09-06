@@ -12,17 +12,17 @@ puts '<table border="1px solid black">'
 # Table header
 print "<tr>"
 csv_file[0].each { |col|
-	print "<th>#{col.strip}</th>"
+  print "<th>#{col.strip}</th>"
 }
 puts "</tr>"
 
 # Table contents
 csv_file[1...csv_file.length].each { |row|
-	print "<tr>"
-	row.each { |col|
-		print "<td>#{col.strip}</td>"
-	}
-	puts "</tr>"
+  print "<tr>"
+  row.each { |col|
+    print "<td>#{col.strip}</td>"
+  }
+  puts "</tr>"
 }
 
 # End table
