@@ -4,22 +4,19 @@ require 'csv'
 
 csv_file = CSV.read(ARGV[0])
 table_name = ARGV[0].split(".")[0]
-table_file = File.open(table_name + ".out", 'w')
 
 # Start table
-table_file.write "<h2>#{table_name.upcase}</h2>\n"
-table_file.write '<table border="1px solid black">' + "\n"
+puts "<h2>#{table_name.upcase}</h2>"
+puts '<table border="1px solid black">'
 
 # Table contents
 csv_file.each { |row|
-	table_file.write "\t<tr>\n"
-	
+	print "<tr>"
 	row.each { |col|
-		table_file.write "\t\t<td>#{col}</td>\n"
+		print "<td>#{col.strip}</td>"
 	}
-	
-	table_file.write "\t</tr>\n"
+	puts "</tr>"
 }
 
 # End table
-table_file.write "</table>\n"
+puts "</table>"
