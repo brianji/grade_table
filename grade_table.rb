@@ -9,6 +9,7 @@ table_name = ARGV[0].split(".")[0]
 puts "<h2>#{table_name.upcase}</h2>"
 puts '<table border="1px solid black">'
 
+# Table header
 print "<tr>"
 csv_file[0].each { |col|
 	print "<th>#{col.strip}</th>"
